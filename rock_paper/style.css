@@ -1,0 +1,49 @@
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 36px;
+}
+
+.options-container {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+}
+
+.sign-button {
+    border: 0;
+    background-color: transparent ;
+    font-size: inherit;
+    transition: all ease-in-out 500ms;
+}
+
+.sign-button:active {
+    transform: scale(1.5);
+}
+
+.player-options, .computer-options {
+    display: flex;
+    gap: 16px;
+}
+
+.player-options > *, .computer-options > * {
+    filter: grayscale(1);
+}
+
+.player-sign-item:hover {
+    filter: grayscale(0);
+}
+
+.computer-options > .active {
+    filter: grayscale(0);
+    transform: scale(1.5);
+}
+
+.score-container {
+    display: flex;
+    gap: 24px;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+}
