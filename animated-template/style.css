@@ -1,0 +1,173 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', 'sans-serif';
+  font-size: 16px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 8px 0 ;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  font-size: 2rem;
+}
+
+.content-panel {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+/* .media-side {
+  display: flex;
+  gap: 8px;
+} */
+
+.burger-menu {
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all ease-in-out 500ms;
+}
+
+.burger-menu:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.overlay-panel {
+  position: relative;
+  top: 7px;
+
+  display: none;
+  transition: all ease-in-out 500ms;
+}
+
+.overlay-panel.active {
+  display: block;
+
+  animation: popup 0.7s;
+}
+
+
+.overlay-content {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background-color: rgba(1, 1, 1, 0.1);
+  border-radius: 6px;
+
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap:2rem;
+
+  font-size: 1.5rem;
+}
+
+.overlay-content::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 5px;
+
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid rgba(1, 1, 1, 0.1);
+}
+
+.media-side {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+
+}
+
+.pages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  text-align: center;
+}
+
+
+@keyframes popup {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.4);
+  }
+  60%{
+    transform: scale(1.1);
+  }
+  70%{
+    transform: scale(1.2);
+  }
+  80%{
+    transform: scale(1);
+  }
+  90%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 500px){
+  header {
+
+    font-size: 1.5rem;
+  }
+
+  .overlay-panel {
+    background-color: rgba(1,1,1,0.2);
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 3rem);
+    top: 3rem;
+    left: 0;
+  }
+
+  .pages-list {
+    gap: 2rem;
+  }
+
+  .media-side {
+    gap: 3rem;
+  }
+
+  .overlay-panel.active {
+    animation: none;
+  }
+
+  .overlay-content {
+    background-color: transparent;
+    padding-top: 100px;
+    position: relative;
+    left: 0;
+    top: 0;
+    animation: none;
+
+    font-size: 3rem;
+  }
+
+  .overlay-content::after {
+    display: none;
+  }
+
+
+
+  /* .media-side {
+    display: none;
+  } */
+}
